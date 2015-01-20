@@ -7,6 +7,7 @@ class Program
     {
         Console.WriteLine("Problem 1: " + Problem1());
         Console.WriteLine("Problem 2: " + Problem2());
+        Console.WriteLine("Problem 3: " + Problem3());
     }
     
     public static string Problem1()
@@ -39,7 +40,6 @@ class Program
         //1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
         //By considering the terms in the Fibonacci sequence whose values do not 
         //exceed four million, find the sum of the even-valued terms.
-        
         int previousSequence = 1;
         int currentSequence = 2;
         int upperBounds = 4000000;
@@ -58,6 +58,32 @@ class Program
         }
         
         return result.ToString();
+    }
+    
+    public static string Problem3()
+    {
+        //The prime factors of 13195 are 5, 7, 13 and 29.
+        //What is the largest prime factor of the number 600851475143 ?
+        long upperBounds = 600851475143;
+        long currentPrime = 2;
+        
+        //While currentPrime squared is less than uppperBounds
+        while (currentPrime * currentPrime <= upperBounds)
+        {
+            //If currentPrime is a prime of upperBounds
+            if (upperBounds % currentPrime == 0)
+            {
+                //Divide upperBounds by currentPrime;
+                upperBounds /= currentPrime;
+            }
+            else
+            {
+                //Increment currentPrime
+                ++currentPrime;
+            }
+        }
+    
+        return upperBounds.ToString();
     }
     
     public static bool IsMultipleOf(int[] multiples, int value)

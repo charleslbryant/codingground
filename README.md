@@ -1,2 +1,3 @@
 # codingground
-Main Repository for Coding Ground
+
+Practice code, code snippets, spikes, proof of concept...playground.
